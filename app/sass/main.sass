@@ -1,0 +1,3256 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+//css reset
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  font: inherit
+  vertical-align: baseline
+
+/* HTML5 display-role reset for older browsers
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+  display: block
+
+body
+  line-height: 1
+
+ol, ul
+  list-style: none
+
+blockquote, q
+  quotes: none
+
+blockquote
+  &:before, &:after
+    content: ''
+    content: none
+
+q
+  &:before, &:after
+    content: ''
+    content: none
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+//css reset end
+
+*
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  &:before, &:after
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+
+*::-webkit-input-placeholder
+  color: #666
+  opacity: 1
+
+*:-moz-placeholder
+  color: #666
+  opacity: 1
+
+*::-moz-placeholder
+  color: #666
+  opacity: 1
+
+*:-ms-input-placeholder
+  color: #666
+  opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+  color: #666
+
+
+body input:required:valid,
+body textarea:required:valid
+  color: #666
+
+html, body
+  height: 100%
+  overflow-x: hidden
+
+body
+  font-size: 14px
+  min-width: 320px
+  position: relative
+  line-height: 20px
+  font-family: $default-font
+  color: $bg-grey
+
+h1
+  color: $accent2
+  font:
+    family: 'WhitneyMedium', sans-serif
+    size: 26px
+  line-height: 20px
+  text-transform: uppercase
+
+h2
+  color: $accent2
+  font:
+    family: "WhitneySemibold", sans-serif
+    size: 22px
+  line-height: 20px
+
+h3
+  color: $accent2
+  font:
+    family: "WhitneySemibold", sans-serif
+    size: 17px
+  line-height: 22px
+
+.subtitle
+  color: $accent2
+  font:
+    family: 'WhitneyMedium', sans-serif
+    size: 26px
+  text-transform: uppercase
+  line-height: normal
+  position: relative
+  padding-bottom: 34px
+  text-align: center
+  margin: 26px auto 60px
+  &:before
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    margin: 0 auto
+    background-color: $accent2
+    width: 100px
+    height: 1px
+
+.img-responsive
+  display: block
+  max-width: 100%
+  height: auto
+
+.text-center
+  text-align: center
+
+::selection
+  background-color: $accent
+  color: #fff
+
+a
+  color: $accent2
+  text-decoration: none
+  transition: .2s ease
+  &:hover, &:focus
+    text-decoration: none
+    outline: none
+    color: $accent
+
+a, button
+  cursor: pointer
+  border: none
+  &:focus
+    outline: none
+
+input, textarea
+  outline: none
+  &:focus
+    outline: none
+.input-group .form-control:focus
+  z-index: 1
+
+.bookmarks, .comparison
+  position: relative
+
+.tooltip
+  width: 90px
+  
+#my-content
+  background: #fafafa
+
+/* === button === */
+.btn
+  border-radius: 3px
+  outline: none
+  box-sizing: border-box
+  &:focus
+    outline: none
+
+.btn-default
+  border: 1px solid #7127f5
+    radius: 3px
+  color: $accent
+  line-height: normal
+  background: transparent
+  box-shadow: none
+  font:
+    family: 'Whitney', sans-serif
+    size: 16px
+    weight: 500
+  &:hover
+    background: $color-accent-gradient
+    box-shadow: 0 4px 5px rgba(61, 4, 164, 0.3), 0 2px 0 #4005aa
+    border-color: transparent
+    color: #ffffff
+
+.btn-accent
+  text-align: center
+  line-height: 20px
+  font:
+    size: 16px
+    family: "WhitneySemibold", sans-serif
+  box-shadow: 0 4px 5px rgba(61, 4, 164, 0.3), 0 2px 0 #4005aa
+  background-image: linear-gradient(to bottom, #8a4cf9 0%, #6a1ff0 100%)
+  color: #ffffff
+  &:hover
+    box-shadow: 0 4px 5px rgba(61, 4, 164, 0.3), 0 2px 0 #4005aa
+    background-image: $color-accent-gradient
+    color: #ffffff
+  &:focus
+    box-shadow: 0 4px 5px rgba(61, 4, 164, 0.3), 0 2px 0 #4005aa
+    background-color: $accent
+    color: #ffffff
+
+.btn-callback
+  padding: 0
+  width: 170px
+  height: 38px
+  line-height: 38px
+  border: none
+
+.btn-loading
+  display: inline-block
+  vertical-align: middle
+  float: left
+  border:
+    top-right-radius: 3px
+  padding: 8px 24px
+  line-height: normal
+  .icon-loading
+    display: inline-block
+    vertical-align: middle
+    margin-right: 10px
+    svg
+      width: 14px
+      height: 17px
+      fill: $accent
+  &:hover
+    svg
+      fill: #FFFFFF
+
+.links
+  color: $accent
+  font:
+    family: 'WhitneyMedium', sans-serif
+    size: 16px
+  line-height: 25px
+  border-bottom: 1px dashed rgba($accent, .5)
+  &:hover
+    border-color: transparent
+    color: $accent
+/* === button end === */
+
+/* === block date === */
+.block-date
+  display: inline-block
+  float: right
+  padding-left: 20px
+  position: relative
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    top: 11px
+    background: url("../img/clock.png") no-repeat
+    width: 15px
+    height: 15px
+/* === block date end === */
+
+/* === pagination === */
+.pagination
+  margin: 0
+  li
+    a
+      width: 40px
+      height: 40px
+      text-align: center
+      margin: 0 2px
+      border: 1px solid #eff1f0
+        radius: 3px
+      background-color: #ffffff
+      display: block
+      font:
+        family: "WhitneyMedium", sans-serif
+        size: 16px
+      color: #1c284b
+      padding: 0
+      line-height: 40px
+      img
+        display: inline-block
+        margin-bottom: 3px
+      &:hover, &:focus
+        background-color: #ffffff
+        color: #1c284b
+    &:first-child
+      a
+        img
+          transform: rotate(90deg)
+    &:last-child
+      a
+        img
+          transform: rotate(-90deg)
+  .active
+    a
+      border: none
+      background-image: linear-gradient(to bottom, #8a4cf9 0%, #6a1ff0 100%)
+
+/* === pagination end === */
+
+/* === pager === */
+.pager
+  margin: 0
+  li
+    a
+      color: $accent
+      font:
+        family: 'WhitneyMedium', sans-serif
+        size: 16px
+      border: 1px solid $accent
+        radius: 3px
+      padding: 9px 12px
+      &:hover
+        background: $accent
+        color: #FFFFFF
+  .pager-prev
+    float: left
+  .pager-next
+    float: right
+/* === pager end === */
+
+/* === breadcrumb === */
+.breadcrumb
+  margin: 23px 0 0
+  padding: 0
+  background: none
+  li
+    a
+      color: $bg-grey
+      font:
+        size: 13px
+      line-height: 20px
+      &:hover
+        color: $accent
+        .icon
+          svg
+            fill: $accent
+      .icon-home
+        margin-right: 8px
+        svg
+          width: 15px
+          height: 14px
+          fill: $bg-grey
+    + li
+      &:before
+        content: '>'
+        color: $bg-grey
+        padding: 0 8px
+  .active
+    color: $accent2
+
+/* === breadcrumb end === */
+
+/* === input === */
+input
+  border: 1px solid #eff1f0
+  background-color: #ffffff
+  color: $bg-grey
+  font:
+    family: $default-font
+    size: 14px
+  line-height: 25px
+  padding-left: 21px
+  box-sizing: border-box
+  transition: .3s ease
+  outline: none
+
+*::-webkit-input-placeholder
+  color: $bg-grey
+
+*:-moz-placeholder
+  color: $bg-grey
+
+*::-moz-placeholder
+  color: $bg-grey
+
+*:-ms-input-placeholder
+  color: $bg-grey
+  &:hover
+    box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.15)
+    border: 1px solid $accent
+    color: $accent2
+  *::-webkit-input-placeholder
+    color: $accent2
+  *:-moz-placeholder
+    color: $accent2
+  *::-moz-placeholder
+    color: $accent2
+  *:-ms-input-placeholder
+    color: $accent2
+/* === input end === */
+
+/* === icon === */
+.icon
+  display: inline-block
+  transition: .3s ease
+  &:focus
+    outline: none
+    svg
+      outline: none
+
+.icon-search
+  width: 100%
+  height: 100%
+  svg
+    width: 15px
+    height: 15px
+    display: inline-block
+  &:hover
+    svg
+      fill: $accent
+
+.icon-bookmarks
+  svg
+    width: 15px
+    height: 15px
+
+
+.icon-currency
+  svg
+    width: 11px
+    height: 15px
+
+.icon-phone
+  svg
+    width: 15px
+    height: 15px
+
+.icon-user
+  width: 15px
+  height: 13px
+
+/* === icon end === */
+
+/* === ul === */
+.list-check
+  li
+    position: relative
+    padding-left: 20px
+    &:before
+      content: ''
+      position: absolute
+      left: 0
+      bottom: 3px
+      background: url("../img/marker.png") no-repeat
+      width: 11px
+      height: 10px
+/* === ul end === */
+
+/* === sidebar-menu === */
+#sidebar
+  .btn-question
+    width: 100%
+    line-height: 23px
+    .icon-issues
+      vertical-align: middle
+      margin: 0 12px 0 0
+      svg
+        width: 15px
+        height: 15px
+        fill: #FFFFFF
+
+.sidebar-menu
+  margin-bottom: 20px
+  .in
+    .icon-arrow
+      svg
+        transform: rotate(180deg)
+  .btn-sidebar
+    background: $accent2
+    text-transform: uppercase
+    color: #FFFFFF
+    width: 100%
+    text-align: left
+    box-shadow: none
+    font:
+      size: 18px
+      family: 'WhitneyMedium', sans-serif
+    line-height: 20px
+    border: none
+      radius: 0
+    padding: 20px 25px
+    position: relative
+    outline: none
+    &:hover, &:focus
+      outline: none
+    .icon-arrow
+      position: absolute
+      right: 25px
+      top: 18px
+      svg
+        fill: #FFFFFF
+        stroke: #FFFFFF
+        width: 10px
+        height: 5px
+        transition: .3s ease
+    .icon-doc
+      margin-right: 10px
+  .dropdown-menu
+    position: relative
+    width: 100%
+    box-shadow: none
+    border: 1px solid #eff1f0
+      top: none
+      radius: 0
+    background-color: #ffffff
+    margin: 0 auto
+    padding: 23px 0
+    box-sizing: border-box
+    li
+      a
+        line-height: 30px
+        padding: 0 24px
+        font:
+          size: 14px
+        color: $accent2
+        &:hover, &:focus
+          background: none
+          color: $accent
+    .active
+      a
+        color: $accent
+        background: none
+
+
+/* === sidebar-menu end === */
+
+/* === social === */
+.social
+  margin-top: 21px
+  a
+    max-width: 21px
+    display: inline-block
+    margin: 0 15px 0 0
+    svg
+      width: 100%
+      display: inline-block
+      fill: $bg-grey
+    &:hover
+      svg
+        fill: $accent
+/* === social end === */
+
+#top
+  background-color: $color-grey
+
+.language, .form-currency
+  .dropdown-menu
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15)
+    background-color: #ffffff
+    padding: 13px 0
+    margin: 0
+    border: none
+      radius: 0
+      top: 2px solid $accent
+    li
+      .btn
+        padding: 0
+        line-height: 30px
+        color: $accent2
+        border:
+          right: none
+        .icon
+          margin: 0 10px 0 15px
+      .select-active
+        color: $accent
+        .icon
+          svg
+            fill: $accent
+      .currency-select
+        text-align: left
+  .btn-group
+    .btn
+      padding: 10px 21px
+      &:hover, &:focus
+        text-decoration: none
+      span
+        color: $accent2
+        line-height: 20px
+      .icon
+        display: inline-block
+        vertical-align: middle
+        svg
+          fill: $accent2
+          stroke: $accent2
+      .icon-currency
+        margin: 0 5px
+
+  .open
+    .icon-arrow
+      transform: rotate(180deg)
+
+.language
+  .btn-group
+    .btn
+      padding-left: 0
+      border:
+        right: 1px solid #e4e4e4
+      .icon-language
+        margin: 0 3px
+
+#top-links
+  .mobile-list
+    display: none
+  .list-inline
+    li
+      vertical-align: middle
+      padding: 10px 15px
+      border:
+        right: 1px solid #e4e4e4
+      position: relative
+      a
+        &:hover
+          color: $accent
+          .icon
+            svg
+              fill: $accent
+      &:first-child
+        padding: 0
+        .icon-search
+          width: 46px
+          height: 40px
+          text-align: center
+          line-height: 38px
+          svg
+            vertical-align: middle
+    .icon
+      vertical-align: middle
+    .entrance
+      padding-right: 0
+      border:
+        right: none
+      a
+        padding-right: 8px
+        border:
+          right: 1px solid $accent2
+        .icon-user
+          margin-right: 11px
+          display: inline-block
+          vertical-align: top
+          svg
+            width: 100%
+            height: 100%
+    .registration
+      padding-left: 0
+      a
+        padding-left: 8px
+    .wishlist-total, .comparison-total, .cart
+      .icon
+        margin-right: 8px
+      span
+        font:
+          family: 'WhitneySemiBold', sans-serif
+          size: 14px
+        vertical-align: middle
+        line-height: 20px
+        &:hover
+          color: $accent
+    .cart
+      span
+        color: $accent
+
+.comparison-total
+  .icon
+    svg
+      width: 18px
+      height: 15px
+
+.search
+  border: none
+  margin-right: 6px
+  width: 0
+  height: 30px
+  position: absolute
+  right: 0
+  top: 5px
+  z-index: 5
+  label
+    position: absolute
+    width: 100%
+    height: 30px
+    display: inline-block
+    transition: .3s ease
+    .btn-close
+      background: #FFFFFF
+      position: relative
+      left: 0
+      top: 0
+      width: 30px
+      height: 30px
+      line-height: 30px
+      padding: 0
+      text-align: center
+      border: none
+        right: 1px solid #eff1f0
+        radius: 0
+      z-index: 3
+      float: left
+      opacity: 0
+      img
+        margin: 0 auto
+        display: inline-block
+        vertical-align: middle
+    .form-control
+      position: relative
+      top: 0
+      left: 0
+      outline: none
+      width: calc(100% - 30px)
+      height: 30px
+      border: none
+        radius: 0
+      background-color: #ffffff
+      color: $bg-grey
+      font:
+        family: $default-font
+        size: 14px
+      padding: 0
+      box-sizing: border-box
+      line-height: 25px
+      box-shadow: none
+  .input-group-btn
+    position: absolute
+    right: 6px
+    top: 0
+    padding: 0
+    height: 0
+    width: 32px
+    .btn
+      top: 0
+      right: 0
+      left: 0
+      margin: 0 auto
+      display: block
+      border: none
+        radius: 0
+      padding: 0
+      background: transparent
+      box-shadow: none
+      opacity: 0
+      .icon
+        width: 15px
+        height: 15px
+      .icon-search
+        width: 100% !important
+        height: 30px !important
+        line-height: 30px !important
+
+
+/* === header navigation === */
+#header-line
+  position: relative
+  z-index: 5
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15)
+  background-color: #ffffff
+  .header-line-wrapper
+    .mobile-list
+      display: none
+      li
+        a
+          &:hover
+            .icon
+              svg
+                fill: $accent
+      .mobile-phone
+        .icon-phone
+          &:hover
+            svg
+              fill: $accent
+              stroke: $accent
+      li
+        .cart
+          color: $accent
+    .logo
+      padding: 22px 0 0
+      a
+        display: block
+        svg
+          width: 70px
+          height: 58px
+          fill: $accent2
+    .btn-callback
+      margin: 23px auto 0
+      width: 100%
+      font-size: 14px
+    #phone
+      padding-top: 20px
+      span
+        vertical-align: bottom
+        svg
+          fill: $accent
+      a
+        color: $accent2
+        font:
+          family: $default-font
+          size: 17px
+        line-height: 24px
+        padding-left: 11px
+        &:last-child
+          padding-left: 30px
+
+.navbar-collapse.collapse
+  padding: 0
+
+.navbar
+  margin-bottom: 0
+
+.navbar-nav
+  li
+    a
+      color: $accent2
+      font:
+        family: 'WhitneyMedium', sans-serif
+        weight: 500
+        size: 13px
+      line-height: 20px
+      padding: 38px 10px
+      border-bottom: 2px solid transparent
+      &:hover
+        color: $accent
+        border-color: $accent
+        background: transparent
+.no-padding
+  padding: 0
+
+/* === header navigation end === */
+
+/* === slider === */
+#slider
+  position: relative
+  height: 720px
+  overflow: hidden
+  &:before
+    content: ''
+    z-index: 2
+    position: absolute
+    width: 278px
+    height: 233px
+    right: 40px
+    bottom: 40px
+    background: url("../img/logo-abs.png") no-repeat
+  .carousel_item
+    background: url("../img/bg-slide.png") no-repeat center
+      size: cover
+    .container
+      height: 720px
+      a
+        display: inline-block
+        width: 100%
+        height: 100%
+        .image
+          position: absolute
+          right: 0
+          bottom: 0
+          display: inline-block
+          height: 100%
+          width: auto
+          img
+            height: 100%
+            width: auto
+            margin: 0 auto
+      .slides-text
+        float: left
+        position: relative
+        margin-top: 102px
+        z-index: 3
+        h4
+          color: $accent2
+          font:
+            size: 112px
+            family: 'WhitneySemiBold', sans-serif
+          line-height: normal
+        p
+          color: $accent2
+          font:
+            family: "WhitneySemibold", sans-serif
+            size: 30px
+          line-height: normal
+          text-transform: uppercase
+          text-align: center
+        .sale
+          margin: 90px 0
+          position: relative
+          &:before
+            content: ''
+            position: absolute
+            right: 70px
+            top: 20px
+            width: 13px
+            height: 142px
+            background: url("../img/arrow-bottom.png") no-repeat
+          li
+            color: $accent2
+            font:
+              family: "WhitneySemibold", sans-serif
+              size: 30px
+            text-transform: uppercase
+            p
+              line-height: 90px
+              display: inline-block
+              margin-left: 15px
+              color: $accent
+              font:
+                size: 90px
+        span
+          color: $accent2
+          font-size: 20px
+
+.carousel-wrapper
+  position: relative
+  #hash-navigation
+    position: absolute
+    left: 0
+    top: 0
+    z-index: 2
+    width: 240px
+    height: 100%
+    background: rgba(255,255,255,.5)
+    ul
+      width: 100%
+      margin: 65px 0
+      display: block
+      li
+        display: block
+        a
+          display: block
+          line-height: 24px
+          text-transform: uppercase
+          color: $accent2
+          font-size: 16px
+          padding: 26px 21px 20px 90px
+          position: relative
+          &:before
+            content: ''
+            position: absolute
+            left: 30px
+            top: 35px
+            width: 50px
+            height: 1.5px
+            background-color: $accent2
+            display: inline-block
+          &:focus
+            color: #FFFFFF
+            background: $accent2
+            &:before
+              background: #FFFFFF
+            &:after
+              content: ''
+              position: absolute
+              left: 75px
+              top: 30px
+              background: url("../img/arrow-white.png") no-repeat
+              width: 7px
+              height: 13px
+    .flex-control-nav
+      display: none
+
+
+.owl-nav
+  .owl-prev, .owl-next
+    position: absolute
+    top: 50%
+    cursor: pointer
+    z-index: 10
+    outline: none
+    border-radius: 50%
+    img
+      box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.15)
+      transition: .3s ease
+      border-radius: 50%
+      opacity: .3
+    &:hover
+      img
+        opacity: 1
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2)
+  .owl-next
+    right: 277px
+  .owl-prev
+    left: 277px
+    transform: rotate(180deg)
+/* === slider end === */
+
+/* === collage === */
+#collage
+  background: $color-white
+  .subtitle
+    margin-top: 62px
+  .product-layout
+    .thumbs-min
+      .image
+        height: 180px
+    .thumbs-max
+      .image
+        height: 240px
+    .product-thumbs
+      position: relative
+      cursor: pointer
+      margin-bottom: 40px
+      &:hover
+        .image
+          opacity: 1
+        .product-thumbs-menu
+          li
+            .links-title
+              background: rgba($accent,.8)
+              &:before
+                background: #FFFFFF
+              &:after
+                content: ''
+                position: absolute
+                left: 45px
+                top: 15px
+                background: url("../img/arrow-white.png") no-repeat
+                width: 7px
+                height: 13px
+      .image
+        opacity: .8
+        width: 100%
+        display: block
+        overflow: hidden
+        img
+          height: 100%
+          margin: 0 auto
+      .thumbs-hover-menu
+        &:hover
+          padding-bottom: 0
+          .links-title
+            width: 100%
+      .product-thumbs-menu
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 100%
+        padding: 0 15px 10px 15px
+        height: auto
+        li
+          position: relative
+          .links-title
+            background: rgba($accent2,.8)
+            font:
+              family: 'WhitneySemiBold', sans-serif
+              size: 17px
+            color: #ffffff
+            line-height: 20px
+            padding: 12px 30px 12px 60px
+            box-sizing: border-box
+            display: inline-block
+            transition: .3s ease
+            &:before
+              content: ''
+              position: absolute
+              left: 30px
+              top: 20px
+              width: 20px
+              height: 1.5px
+              background-color: #FFFFFF
+              display: inline-block
+        &:hover
+          .menu-hover
+            opacity: 1
+            visibility: visible
+            position: relative
+      .menu-hover
+        position: absolute
+        background: rgba($accent, .8)
+        padding: 0 0 10px 0
+        width: 100%
+        opacity: 0
+        bottom: 0
+        visibility: hidden
+        transition: .4s ease
+        li
+          a
+            color: #FFFFFF
+            line-height: 22px
+            padding-left: 60px
+            transition: .3s ease
+            &:hover
+              text-decoration: underline
+/* === collage end === */
+
+/* === advantages === */
+#advantages
+  background: url("../img/adv-bg.png") no-repeat center
+    size: cover
+  .adv-item
+    padding: 48px 34px 50px
+    position: relative
+    color: $accent2
+    display: block
+    cursor: pointer
+    .image
+      position: absolute
+      left: 0
+      bottom: 0
+    &-left
+      transition: .3s ease
+      width: 26px
+      padding-right: 122px
+      display: inline-block
+      vertical-align: top
+      position: relative
+      color: $accent2
+      line-height: 24px
+      font:
+        family: "WhitneySemibold", sans-serif
+        size: 32px
+      &:before
+        content: ''
+        position: absolute
+        right: 0
+        top: 11px
+        width: 92px
+        height: 1px
+        background: $accent2
+      &:after
+        content: ''
+        position: absolute
+        right: -2px
+        top: 5px
+        background: url("../img/arrow-accent.png") no-repeat
+        width: 7px
+        height: 13px
+        opacity: 0
+        visibility: hidden
+        transition: .3s ease
+    &-right
+      display: inline-block
+      margin-left: 29px
+      max-width: 400px
+      position: relative
+      z-index: 2
+      h3
+        font-size: 30px
+        line-height: normal
+        font-family: "WhitneySemibold", sans-serif
+        margin-bottom: 11px
+      .adv-item-text
+        margin-bottom: 20px
+        .clarification
+          text-transform: uppercase
+          font-size: 16px
+          line-height: normal
+          margin-bottom: 16px
+        .text-bold
+          font-family: 'WhitneyMedium', sans-serif
+        ul
+          margin: 20px 0
+          li
+            font-size: 15px
+            line-height: 25px
+            span
+              font-family: "WhitneySemiBold", sans-serif
+      .btn-default
+        padding: 10px 32px
+    &:after
+      content: ''
+      position: absolute
+      left: 0
+      top: 0
+      background: url("../img/adv-border.png") no-repeat
+        size: contain
+      width: 20px
+      height: 360px
+    &:first-child
+      &:after
+        display: none
+      .image
+        left: 67px
+        bottom: 25px
+        width: 93px
+        height: 243px
+    &:nth-child(2)
+      .adv-item-right
+        .adv-item-text
+          p
+            margin-bottom: 26px
+            &:last-child
+              margin-bottom: 0
+          .clarification
+            margin-bottom: 16px
+      .image
+        width: 209px
+        height: 188px
+        left: 28px
+        bottom: 32px
+    &:last-child
+      .image
+        width: 260px
+        height: 165px
+        left: 28px
+        bottom: 25px
+    &:hover
+      .adv-item-left
+        color: $accent
+        &:before
+          background: $accent
+        &:after
+          opacity: 1
+          visibility: visible
+      .adv-item-right
+        h3
+          color: $accent
+
+/* === advantages end === */
+
+/* === cart product === */
+.cart-product
+  border: 1px solid #eff1f0
+    bottom: 2px solid #eff1f0
+  background-color: #ffffff
+  color: $accent2
+  height: 500px
+  z-index: 2
+  width: 270px
+  margin: 0 auto 60px
+  cursor: pointer
+  overflow: hidden
+  transition: .3s ease
+  &:hover
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2)
+    .cart-body
+      transform: translateY(calc(10px - 80%))
+  .image
+    position: relative
+    width: 100%
+    min-height: 385px
+    max-height: 385px
+    overflow: hidden
+    a
+      display: block
+      box-sizing: border-box
+      border: 1px #eff1f0 solid
+        right: none
+      img
+        height: 100%
+        width: 100%
+        max-width: none
+        margin: 0 auto
+  .cart-body
+    background: #ffffff
+    margin-top: auto
+    transform: translateY(calc(-10px + 1%))
+    transition: .3s ease
+    position: relative
+    z-index: 1
+    padding: 24px 15px 24px
+    border: 1px #eff1f0 solid
+      top: none
+      right: none
+      bottom: none
+    .caption
+      h4
+        line-height: 20px
+        font:
+          size: 15px
+      .price
+        margin: 18px 0 41px
+        font:
+          size: 20px
+          family: "WhitneySemiBold", sans-serif
+        p
+          display: inline-block
+        .old-price
+          color: $bg-grey
+          font:
+            family: 'WhitneyMedium', sans-serif
+            size: 16px
+          text-decoration: line-through
+          display: inline-block
+          margin-left: 20px
+          line-height: 24px
+    .button-group
+      .btn-accent
+        border: none
+        width: 210px
+        height: 40px
+        margin: 0 auto
+        display: block
+      .button-group-bottom
+        text-align: center
+        margin: 20px auto 0
+        button
+          background: transparent
+          &:hover
+            span
+              svg
+                fill: $accent
+                stroke: $accent
+        .comparison
+          svg
+            width: 18px
+            height: 15px
+
+      .button-group-option
+        margin-top: 21px
+        .control-label
+          font-size: 13px
+          color: $accent2
+          margin-bottom: 8px
+.b-quantity
+  float: right
+  .quantity
+    button
+      width: 20px
+      height: 30px
+      background-color: #e1e1e1
+      text-align: center
+      display: inline-block
+      float: left
+      line-height: 30px
+      color: #FFFFFF
+      transition: .3s ease
+      &:hover
+        background-color: $accent2
+    .quantity-total
+      width: 50px
+      height: 30px
+      box-shadow: inset 3px 4px 5px rgba(6, 3, 0, 0.05)
+      background-color: $color-white
+      display: inline-block
+      box-sizing: border-box
+      float: left
+      line-height: 30px
+      text-align: center
+      color: $accent2
+      padding: 0
+
+.b-price
+  float: left
+  .select
+    display: inline-block
+    position: relative
+  .select-price
+    background: url("../img/arrow.png") $color-white no-repeat 60px center
+    outline: none
+    width: 85px
+    height: 30px
+    border: 1px solid #eff1f0
+      radius: 0
+    padding-left: 15px
+    color: $accent2
+    font-size: 14px
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+    cursor: pointer
+
+.stick-sale
+  background: #ffa133
+.stick-promotion
+  background: #ff3d33
+.stick-hit
+  background: #efd425
+.stick-news
+  background: #9e6afa
+.stick
+  position: absolute
+  left: -35px
+  top: 15px
+  text-align: center
+  color: #FFFFFF
+  font-size: 10px
+  line-height: 32px
+  width: 130px
+  transform: rotate(-47deg)
+
+
+
+/* === cart product end === */
+
+/* === filter === */
+.controls
+  text-align: center
+  border-bottom: 1px solid #d4d4d6
+  margin: 0 0 40px
+  a
+    cursor: pointer
+    color: #abaeb8
+    line-height: 20px
+    margin: 0 30px
+    font:
+      size: 22px
+      family: 'WhitneySemiBold', sans-serif
+    padding-bottom: 20px
+    border-bottom: 1px solid transparent
+    display: inline-block
+    &:focus
+      color: $accent2
+      &:nth-child(1)
+        border-color: $accent
+      &:nth-child(2)
+        border-color: #ff3d33
+      &:nth-child(3)
+        border-color: #efd425
+      &:nth-child(4)
+        border-color: #ffa133
+  .active
+    border-color: $accent
+    color: $accent2
+/* === filter end === */
+
+/* === not deals === */
+.not-deals
+  background: $color-white
+  padding: 0 70px
+  .subtitle
+    margin-top: 62px
+.blog-carousel
+  .carousel-item
+    transition: .3s ease-in-out
+    margin: 0 auto
+    display: block
+    width: 270px
+  .owl-nav
+    .owl-prev
+      left: -23px
+      top: 38%
+    .owl-next
+      right: -23px
+      top: 38%
+
+.show
+  float: left
+
+.hide
+  width: 0
+
+/* === not deals end === */
+
+
+/* === latest-blog === */
+#latest-blog
+  background: #FFFFFF
+  padding-bottom: 60px
+  .subtitle
+    margin-top: 62px
+  .btn-default
+    display: block
+    width: 100%
+    line-height: 40px
+    padding: 0
+
+.blog-items
+  display: block
+  border: 1px solid #eff1f0
+  box-sizing: border-box
+  transition: .3s ease
+  cursor: pointer
+  margin-bottom: 30px
+  .image
+    overflow: hidden
+    img
+      max-width: none
+      width: 100%
+      height: 100%
+  &:hover
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2)
+  .block-text
+    padding: 22px 30px 10px
+    box-sizing: border-box
+    h6
+      color: $accent2
+      font:
+        family: 'WhitneySemiBold', sans-serif
+        weight: 400
+        size: 17px
+      line-height: 20px
+    p
+      font-size: 14px
+      line-height: 20px
+      max-height: 220px
+      overflow: hidden
+      margin: 10px 0
+
+.blog-max-items
+  margin-bottom: 0
+  .image
+    width: 100%
+    height: 340px
+    overflow: hidden
+.blog-min-items
+  padding: 0
+  cursor: pointer
+  margin-bottom: 30px
+  .image
+    padding: 0
+    height: 120px
+    width: 170px
+  .block-text
+    padding: 20px 0 10px 20px
+    h6
+      font-size: 15px
+      margin-bottom: 10px
+/* === latest-blog end === */
+
+/* === seo-text === */
+#seo-text
+  background: url("../img/bg-seo.jpg") no-repeat center
+    size: cover
+  position: relative
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    background: rgba(255,255,255,.9)
+    width: 100%
+    height: 100%
+  .block-text
+    position: relative
+    z-index: 2
+    margin: 64px auto 57px
+    overflow-y: scroll
+    max-height: 340px
+    padding-right: 70px
+    h6
+      color: $accent2
+      font:
+        size: 22px
+        family: "WhitneySemiBold", sans-serif
+      margin-bottom: 25px
+    p
+      font-size: 14px
+      line-height: 20px
+      margin-bottom: 30px
+      &:last-child
+        margin-bottom: 0
+
+//scroll
+\::-webkit-scrollbar-button
+  background: url('') no-repeat
+  width: 6px
+  height: 0
+
+\::-webkit-scrollbar-track
+  //background-color: #32312e
+  background-color: #dadada
+
+\::-webkit-scrollbar-thumb
+  -webkit-border-radius: 5px
+  border-radius: 5px
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .2)
+  background: $accent
+
+
+\::-webkit-resizer
+  background: url('') no-repeat
+  width: 7px
+  height: 0
+
+\::-webkit-scrollbar
+  width: 4px
+
+/* === seo-text end === */
+
+
+/* === footer === */
+.main-footer
+  .main-footer-top
+    background: $accent2
+    padding: 32px 0
+    h3
+      color: #ffffff
+      font:
+        family: 'WhitneySemiBold', sans-serif
+        size: 15px
+      position: relative
+      padding-left: 25px
+      margin-bottom: 20px
+    .footer-logo
+      padding: 0
+      .logo
+        a
+          img
+            margin: 0 auto
+    .footer-menu
+      h3
+        &:before
+          content: ''
+          position: absolute
+          left: 0
+          top: 0
+          width: 15px
+          height: 15px
+      .list-group
+        box-shadow: none
+        li
+          margin-bottom: 10px
+          a
+            color: $bg-grey
+            font-size: 13px
+            line-height: normal
+            border-bottom: 1px solid transparent
+            &:hover
+              border-color: $accent
+              color: #FFFFFF
+    .catalog-menu
+      h3
+        &:before
+          background: url("../img/icon.png") no-repeat
+      .list-group
+        column-count: 2
+    .personal-menu
+      h3
+        &:before
+          background: url("../img/icon2.png") no-repeat
+    .score-menu
+      h3
+        &:before
+          background: url("../img/icon3.png") no-repeat
+    .footer-news
+      h3
+        padding-left: 0
+    #footer-phone
+      margin: 25px 0
+      li
+        &:nth-child(2)
+          padding-left: 23px
+        &:first-child
+          a
+            .icon-phone
+              margin-right: 5px
+        a
+          color: #FFFFFF
+          line-height: 25px
+          display: block
+          .icon-phone
+            svg
+              fill: $bg-grey
+        &:last-child
+          margin-top: 20px
+        p
+          font-size: 12px
+          padding-left: 23px
+    #footer-contacts
+      a
+        color: #ffffff
+        display: block
+        line-height: 25px
+        .icon
+          margin-right: 8px
+          svg
+            fill: $bg-grey
+        .icon-mail
+          svg
+            width: 18px
+            height: 13px
+        .icon-skype
+          margin-right: 13px
+          svg
+            width: 15px
+            height: 15px
+        &:last-child
+          margin-bottom: 0
+  .main-footer-bottom
+    background-color: #0f1936
+    padding: 8px 0
+    p
+      color: $bg-grey
+      font-size: 14px
+      line-height: 25px
+      display: inline-block
+      float: left
+    a
+      font:
+        size: 14px
+        family: "PT Sans", sans-serif
+      float: right
+      color: $bg-grey
+
+/* === footer end === */
+
+
+/* === subscription === */
+.subscription
+  width: 100%
+  height: 40px
+  input
+    width: calc(100% - 40px)
+    height: 40px
+    background: #FFFFFF
+    padding: 0 0 0 21px
+    box-sizing: border-box
+    display: inline-block
+    float: left
+    border: none
+  button
+    float: left
+    width: 40px
+    height: 40px
+    display: inline-block
+    background-color: $accent
+    box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.15)
+    padding: 0
+    img
+      margin: 0 auto
+/* === subscription end === */
+
+/* === menu === */
+
+/* === mobile menu === */
+#menu
+  display: none
+  border-radius: 0
+.mm-menu_offcanvas
+  max-width: 234px
+
+//#my-menu:not( .mm-menu )
+//  display: none !important
+//
+//#mm-my-menu
+//  display: none !important
+
+.menu_navbar-top.mm-panel.mm-panel_opened
+  .logo
+    display: block
+
+.mm-listitem .mm-btn_next:not(.mm-btn_fullwidth)
+  width: 100%
+  border: none
+
+.mm-navbar__title
+  display: none
+
+.mm-navbar_has-btns
+  height: auto
+  background: $accent2
+  padding: 11px 20px 20px
+  .mobile-header
+    padding: 0
+    .form-currency
+      margin-left: 10px
+    form
+      display: inline-block
+      float: left
+      .btn-group
+        button
+          border-right: none
+          padding: 0
+          span
+            color: #FFFFFF
+          .icon-arrow, .icon-currency
+            svg
+              fill: #FFFFFF
+              stroke: #FFFFFF
+        .dropdown-menu
+          top: 40px
+          .btn
+            .icon-currency
+              svg
+                fill: $accent2
+                stroke: $accent2
+          .select-active
+            .icon-currency
+              svg
+                fill: $accent
+                stroke: $accent
+
+.mm-menu_navbar_top-1 .mm-panels
+  top: 117px
+
+.mm-btn_close
+  display: none
+
+.mm-menu .mm-btn_close::after, .mm-menu .mm-btn_close::before
+  content: ''
+  position: absolute
+  background: #FFFFFF
+  width: 2px
+  height: 12px
+  top: 0
+  border: none
+
+.mm-menu .mm-btn_close::after
+  transform: rotate(45deg)
+  left: 0
+
+.mm-menu .mm-btn_close::before
+  left: 0
+
+.mm-btn_close:first-child
+  width: 12px
+  height: 12px
+  padding: 0
+  top: 20px
+  left: 20px
+
+.mobile-logo
+  display: block
+  width: 100%
+  text-align: right
+  margin-bottom: 17px
+  img
+    width: 50px
+    height: 40px
+    display: inline-block
+
+.mm-btn_prev
+  width: 100%
+  &:before
+    content: ''
+    position: absolute
+
+
+.mm-menu .mm-listview .mm-btn_next::after
+  border:
+    color: $accent
+    width: 1px
+
+.mm-btn_prev
+  &::before
+    content: ''
+    position: absolute
+    left: 20px
+    top: 0
+    background: url("../img/arrow-prev.png") no-repeat
+    width: 26px
+    height: 13px
+    border: none
+    transform: rotate(0deg)
+
+.mm-listitem::after, .mm-listitem .mm-btn_next::before
+  display: none
+
+
+.mm-menu_multiline .mm-listitem > a, .mm-menu_multiline .mm-listitem > span, .mm-panel_multiline .mm-listitem > a, .mm-panel_multiline .mm-listitem > span
+  color: $accent2
+  font-family: "WhitneyMedium", sans-serif
+
+.mm-listitem .mm-btn_next:not(.mm-btn_fullwidth) + a, .mm-listitem .mm-btn_next:not(.mm-btn_fullwidth) + span
+  margin-right: 0
+  color: $accent
+  background-color: $color-grey
+
+.mm-panel
+  background: #FFFFFF
+
+    
+.mm-navbar
+  border-bottom: none
+
+.block-mobile
+  display: none
+/* === mobile menu end === */
+
+/* === desktop menu === */
+#header-menu
+  ul
+    li
+      &:hover
+        .menu-hover
+          opacity: 1
+          visibility: visible
+  .drop-menu
+    position: relative
+    z-index: 11
+    .menu-hover
+      background-color: #ffffff
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15)
+      border-top: 2px solid $accent
+      padding: 24px 0 23px
+      position: absolute
+      top: 95px
+      left: 0
+      min-width: 185px
+      transition: .3s ease
+      opacity: 0
+      visibility: hidden
+      z-index: 11
+      .dropdown-inner
+        .menu-hover-list1
+          li
+            &:hover
+              .submenu-hover
+                opacity: 1
+                visibility: visible
+            a
+              padding: 0 0 0 20px
+              font-size: 13px
+              color: $accent2
+              line-height: 30px
+              display: block
+              box-sizing: border-box
+              border: none
+              position: relative
+              &:before
+                content: ''
+                position: absolute
+                right: 10px
+                width: 34px
+                height: 1px
+                top: 15px
+                z-index: 1
+                background: transparent
+              &:after
+                content: ''
+                position: absolute
+                right: 10px
+                top: 10px
+                background: url("../img/arrow-white.png") no-repeat
+                width: 7px
+                height: 13px
+                z-index: 2
+                opacity: 0
+                visibility: hidden
+              &:hover
+                border: none
+                background-color: $accent2
+                color: #fefeff
+                &:before
+                  background: #FFFFFF
+                &:after
+                  opacity: 1
+                  visibility: visible
+          .drop-menu2
+            position: relative
+            .submenu-hover
+              position: absolute
+              left: 185px
+              top: 0
+              min-width: 275px
+              background-color: $accent2
+              box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15)
+              opacity: 0
+              visibility: hidden
+              transition: .3s ease
+              li
+                padding: 7px 15px 7px 35px
+                a
+                  display: inline-block
+                  color: #ffffff
+                  line-height: normal
+                  padding: 0
+                  border-bottom: 1px solid transparent
+                  &:before, &:after
+                    display: none
+                  &:hover
+                    border-color: $accent
+/* === desktop menu end === */
+
+/* === menu end === */
+
+/* === button top === */
+.btn-top
+  //display: none
+  position: fixed
+  bottom: 373px
+  right: 277px
+  background-color: #0f1936
+  width: 68px
+  height: 70px
+  border: 5px solid $accent2
+  border-radius: 3px 3px 0 0
+  cursor: pointer
+  transition: .3s ease
+  z-index: 50
+  text-align: center
+  line-height: 60px
+  img
+    display: inline-block
+/* === button top end === */
+
+/* === page blog === */
+.page-blog
+  margin-bottom: 150px
+  padding: 0
+  .blog-items
+    padding-bottom: 28px
+    .block-text
+      .p
+        margin: 20px 0
+        max-height: 64px
+        overflow: hidden
+  .button-group
+    width: 100%
+    display: inline-block
+    vertical-align: middle
+    .pagination
+      float: right
+      display: inline-block
+      vertical-align: middle
+
+
+/* === page blog end === */
+
+/* === page article === */
+.page-article
+  margin-bottom: 160px
+  .blog-items
+    cursor: default
+    &:hover
+      box-shadow: none
+    .block-date
+      float: left
+      margin: 31px 30px 25px
+      width: 100%
+      &:before
+        top: 3px
+    .block-text
+      padding-bottom: 33px
+
+/* === page article end === */
+
+/* === accordion === */
+#accordion
+  margin-bottom: 100px
+  .active-panel
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important
+  .panel
+    border: 1px solid #eff1f0
+      radius: 0
+    box-shadow: none
+    margin: 0 0 10px
+    padding: 19px 30px
+    transition: .3s ease
+    &:hover
+      border-color: $accent
+      box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.15)
+    .in
+      &:before
+        transform: rotate(180deg)
+    .panel-heading
+      border: none
+        radius: 0
+      background: #ffffff
+      padding: 0
+      cursor: pointer
+      position: relative
+      &:before
+        content: ''
+        position: absolute
+        right: 0
+        top: 7px
+        background: url("../img/arrow.png") no-repeat
+        width: 10px
+        height: 5px
+        transition: .3s ease
+      h4
+        font:
+          family: 'WhitneyMedium', sans-serif
+          size: 16px
+        color: $accent2
+        line-height: 20px
+    .panel-body
+      padding: 23px 0 13px 0
+      margin-top: 20px
+/* === accordion end === */
+
+/* === page delivery === */
+.page-delivery
+  margin-bottom: 67px
+.delivery-item
+  margin-bottom: 40px
+  .icon-auto
+    width: 47px
+    height: 30px
+  .icon-certificate
+    width: 42px
+    height: 38px
+  .icon-aircraft
+    width: 40px
+    height: 37px
+  .icon
+    display: inline-block
+    vertical-align: middle
+    svg
+      fill: $accent
+      width: 100%
+      height: 100%
+  &-title
+    margin-bottom: 22px
+    color: $accent2
+    font:
+      family: 'WhitneySemiBold', sans-serif
+      size: 26px
+    h3
+      display: inline-block
+      vertical-align: middle
+      margin-left: 10px
+  &-text
+    .list-check
+      li
+        color: $accent2
+        font-size: 15px
+        margin-bottom: 13px
+        line-height: 20px
+        &:before
+          top: 5px
+    .list-number
+      margin-top: 10px
+      list-style: decimal
+      padding-left: 15px
+      li
+        color: $accent2
+        font:
+          family: 'WhitneyMedium', sans-serif
+          size: 13px
+        margin-bottom: 10px
+        line-height: 18px
+        padding-left: 0
+        &:before
+          display: none
+        span
+          color: $bg-grey
+          font:
+            family: $default-font
+            size: 14px
+    p
+      color: $bg-grey
+      font-size: 14px
+      line-height: 18px
+/* === page delivery end === */
+
+/* === page order === */
+.page-order
+  margin-bottom: 47px
+  .introduction
+    margin-bottom: 26px
+    font-size: 14px
+    line-height: 20px
+    color: $bg-grey
+
+.order-item
+  margin-bottom: 40px
+  &-title
+    margin-bottom: 25px
+    h3
+      color: $accent2
+      font:
+        family: 'WhitneySemiBold', sans-serif
+        size: 18px
+      display: inline-block
+      vertical-align: middle
+      line-height: 24px
+    .number
+      margin-right: 15px
+      border: 1px dashed rgba($accent, .5)
+        radius: 50%
+      width: 40px
+      height: 40px
+      display: inline-block
+      vertical-align: middle
+      text-align: center
+      color: $accent
+      line-height: 40px
+      font:
+        family: 'WhitneySemiBold', sans-serif
+        weight: 700
+        size: 20px
+  &-text
+    strong
+      font:
+        weight: 600
+        family: 'WhitneySemiBold', sans-serif
+    .description
+      margin-bottom: 25px
+    p
+      font-size: 15px
+      color: $accent2
+    .list-check
+      padding-left: 15px
+      li
+        color: $accent2
+        font-size: 15px
+        line-height: normal
+        margin-bottom: 15px
+        &:before
+          top: 5px
+    .note
+      padding-left: 35px
+      h6
+        font:
+          size: 15px
+          weight: 600
+          family: 'WhitneySemiBold', sans-serif
+        margin-bottom: 15px
+        color: $accent2
+/* === page order end === */
+
+/* === page contacts === */
+.page-contacts
+  display: inline-block
+  .contacts-item, .contacts-form
+    h3
+      color: $accent2
+      font:
+        family: 'WhitneySemiBold', sans-serif
+        size: 22px
+    a
+      display: block
+      font-size: 18px
+      line-height: 30px
+      color: $accent2
+  .contacts-item
+    h3
+      margin-bottom: 42px
+    p
+      display: inline-block
+      vertical-align: top
+      margin-right: 15px
+    .line
+      margin-bottom: 32px
+      .b-item
+        display: inline-block
+        vertical-align: top
+      p
+        vertical-align: middle
+      .social
+        display: inline-block
+        vertical-align: middle
+        margin-top: 0
+        a
+          display: inline-block
+          line-height: normal
+          &:hover
+            svg
+              fill: $accent
+          svg
+            fill: $accent2
+    .b-address
+      font-size: 18px
+      line-height: 25px
+      color: $accent2
+      .icon
+        width: 14px
+        height: 18px
+        margin-right: 5px
+        svg
+          width: 100%
+          height: 100%
+          fill: $accent2
+    .skype
+      .icon-skype
+        margin-right: 9px
+        svg
+          width: 17px
+          height: 17px
+          fill: $accent2
+  .contacts-form
+    border: 1px solid #e6e6e6
+    background-color: #fafafa
+    float: right
+    width: 470px
+    padding: 30px 50px 42px
+    h3
+      text-align: center
+      margin-bottom: 30px
+      color: $accent2
+      font-size: 22px
+    .form-control
+      width: 100%
+      height: 50px
+      border: 1px solid #eff1f0
+        radius: 0
+      box-shadow: none
+      background-color: #ffffff
+      display: block
+      margin-bottom: 10px
+      font:
+        family: $default-font
+        size: 14px
+      color: $bg-grey
+      padding: 0 0 0 21px
+    *::-webkit-input-placeholder
+      color: $bg-grey
+    *:-moz-placeholder
+      color: $bg-grey
+    *::-moz-placeholder
+      color: $bg-grey
+    .input-group
+      display: inline-block
+      width: 100%
+      margin-bottom: 20px
+      input
+        width: 235px
+        margin: 0
+        display: block
+      .input-text
+        display: block
+        float: right
+        width: 125px
+        height: 50px
+        border: 1px solid #eff1f0
+        background-color: #ffffff
+        text-align: center
+        line-height: 50px
+        font:
+          family: 'WhitneySemiBold', sans-serif
+          size: 16px
+        color: $accent2
+    textarea
+      box-sizing: border-box
+      padding: 17px 21px
+      width: 100%
+      height: 130px
+      border: 1px solid #eff1f0
+        radius: 0
+      box-shadow: none
+      background-color: #ffffff
+      display: block
+      margin-bottom: 10px
+      font:
+        family: $default-font
+        size: 14px
+      color: $bg-grey
+    .btn-accent
+      margin: 0 auto
+      width: 100%
+
+#map
+  margin: 100px auto 64px
+  .container-fluid
+    .row
+      height: 440px
+
+.page-contacts-wrapper
+  margin-bottom: 100px
+  .contacts-item
+    h3
+      margin-bottom: 25px
+    .block-date
+      float: left
+      margin-bottom: 20px
+      &:before
+        top: 3px
+    .b-text
+      max-height: 134px
+      overflow-y: scroll
+
+.contacts-form
+  padding: 0
+  margin: 0
+  h3
+    text-align: center
+    margin-bottom: 30px
+    color: $accent2
+    font-size: 22px
+  .form-control
+    width: 100%
+    height: 50px
+    border: 1px solid #eff1f0
+      radius: 0
+    box-shadow: none
+    background-color: #ffffff
+    display: block
+    margin-bottom: 10px
+    font:
+      family: $default-font
+      size: 14px
+    color: $bg-grey
+    padding: 0 0 0 21px
+    cursor: pointer
+    transition: .25s ease
+  *::-webkit-input-placeholder
+    color: $bg-grey
+  *:-moz-placeholder
+    color: $bg-grey
+  *::-moz-placeholder
+    color: $bg-grey
+  .input-group
+    display: inline-block
+    width: 100%
+    margin-bottom: 20px
+    input
+      width: 235px
+      margin: 0
+      display: block
+    .input-text
+      display: block
+      float: right
+      width: 125px
+      height: 50px
+      border: 1px solid #eff1f0
+      background-color: #ffffff
+      text-align: center
+      line-height: 50px
+      font:
+        family: 'WhitneySemiBold', sans-serif
+        size: 16px
+      color: $accent2
+  textarea
+    cursor: pointer
+    transition: .3s ease
+    box-sizing: border-box
+    padding: 17px 21px
+    width: 100%
+    height: 130px
+    border: 1px solid #eff1f0
+      radius: 0
+    box-shadow: none
+    background-color: #ffffff
+    display: block
+    margin-bottom: 10px
+    font:
+      family: $default-font
+      size: 14px
+    color: $bg-grey
+  .btn-accent
+    margin: 0 auto
+    width: 100%
+/* === page contacts end === */
+
+
+/* === page about === */
+.page-about
+  .s-about
+    h3
+      color: $accent2
+      font:
+        family: 'WhitneySemiBold', sans-serif
+        size: 18px
+      margin-bottom: 20px
+    p
+      font-size: 14px
+      line-height: 20px
+      margin-bottom: 20px
+  .s-about-top
+    position: relative
+    .container
+      position: relative
+      z-index: 2
+    .s-about-top-image
+      position: absolute
+      right: -250px
+      bottom: 0
+      height: 100%
+      img
+        height: 100%
+        max-width: none
+    padding: 0 0 32px 0
+  .s-about-center
+    background-color: #f5f5f5
+    padding: 44px 0 37px
+  .s-about-bottom
+    background: #FFFFFF
+    .s-about-text
+      padding: 30px 15px 30px 60px
+      .btn
+        padding: 10px 57px
+        margin: 10px 0 0 0
+    .s-about-img
+      padding: 0
+      max-height: 500px
+      overflow: hidden
+      img
+        width: 100%
+        height: auto
+/* === page about end === */
+
+/* === page reviews === */
+.page-reviews
+  h3
+    color: $accent2
+    font:
+      family: 'WhitneySemiBold', sans-serif
+      size: 22px
+    line-height: 20px
+    margin-bottom: 40px
+  &-form
+    margin-bottom: 62px
+    .contacts-form
+      .form-group
+        position: relative
+      textarea
+        height: 150px
+        &:hover
+          border-color: $accent
+          color: $accent2
+        *::-webkit-input-placeholder
+          color: $accent2
+        *:-moz-placeholder
+          color: $accent2
+        *::-moz-placeholder
+          color: $accent2
+      .form-control
+        &:hover
+          border-color: $accent
+          color: $accent2
+        *::-webkit-input-placeholder
+          color: $accent2
+        *:-moz-placeholder
+          color: $accent2
+        *::-moz-placeholder
+          color: $accent2
+  &-bottom
+    margin: 0 75px
+    border-top: 1px solid #d4d4d6
+    padding: 63px 0 160px
+    .reviews-item
+      border: 1px solid #eff1f0
+      background-color: #ffffff
+      padding: 28px 30px
+      margin-bottom: 30px
+      .date-wrap
+        padding: 0
+        .block-date
+          p
+            font:
+              size: 13px
+              family: 'WhitneySemiBold', sans-serif
+          &:before
+            top: 3px
+      .block-name
+        padding: 0
+        display: inline-block
+        color: $accent2
+        margin-bottom: 21px
+        font:
+         family: 'WhitneySemiBold', sans-serif
+         size: 17px
+      .block-text
+        padding: 0
+        font-size: 14px
+      .response-admin
+        border-top: 1px solid #eff1f0
+        margin-top: 27px
+        padding: 27px 0 0 70px
+        .block-name
+          color: $accent
+          position: relative
+          &:before
+            content: ''
+            position: absolute
+            left: -70px
+            top: 10px
+            width: 38px
+            height: 1px
+            background: $accent
+          &:after
+            content: ''
+            position: absolute
+            background: url("../img/arrow-accent.png") no-repeat
+            width: 7px
+            height: 13px
+            top: 4px
+            left: -38px
+/* === page reviews end === */
+
+
+/* === page representative === */
+.page-representative
+  .representative-item
+    width: 100%
+    background: #FFFFFF
+    border: 1px solid #eff1f0
+    margin-bottom: 20px
+    display: inline-block
+    box-sizing: border-box
+    .item-contacts, .item-maps, .item-image
+      padding: 0
+    .item-contacts
+      padding: 18px 10px 18px 0
+      .icon
+        margin-right: 9px
+        svg
+          fill: $accent2
+      .icon-maps
+        svg
+          width: 14px
+          height: 18px
+      .line
+        margin-bottom: 20px
+        position: relative
+        padding-left: 40px
+        color: $accent2
+        font-size: 14px
+        line-height: 24px
+        .icon
+          position: absolute
+          left: 20px
+          top: 0
+      .b-phone
+        a
+          display: inline-block
+          line-height: 24px
+          cursor: inherit
+          &:hover
+            color: $accent2
+      .block-date
+        float: left
+        color: $accent2
+        margin-bottom: 0
+        &:before
+          display: none
+        .icon-clock
+          transform: scale(-1, 1)
+          svg
+            width: 18px
+            height: 18px
+    .item-image
+      overflow: hidden
+      img
+        max-height: 220px
+        width: 100%
+        max-width: none
+    .item-maps
+      height: 220px
+  .b-bottom
+    text-align: center
+    .btn-default
+      margin: 20px auto 49px
+      padding: 10px 70px
+  .bonus-program
+    border-top: 1px solid #e6e6e6
+    padding: 54px 0 57px
+    display: inline-block
+.bonus-program, .cooperation
+  .block-title
+    margin-bottom: 49px
+    font:
+      family: 'WhitneySemiBold', sans-serif
+      size: 22px
+    text-align: center
+    color: $accent2
+    line-height: 30px
+.cooperation
+  background: #FFFFFF
+  .container
+    padding: 64px 15px 30px
+    .block-title
+      margin-bottom: 35px
+    .delivery-item
+      h3
+        display: inline-block
+        width: calc(100% - 60px)
+        margin-left: 0
+        font-size: 15px
+      .icon-wholesale
+        svg
+          width: 42px
+          height: 33px
+      .icon-conditions
+        svg
+          width: 37px
+          height: 38px
+      .icon-delivery
+        svg
+          width: 38px
+          height: 41px
+      .delivery-item-text
+        margin-bottom: 28px
+/* === page representative end === */
+
+.has-error
+  background-color: #ffebeb !important
+  border-color: #ff6666 !important
+  font-size: 14px
+  color: #ff0000 !important
+  &::placeholder
+    color: #ff0000
+    
+/* === page catalog === */  
+.page-catalog
+  #seo-text
+    background: #FFFFFF
+  .catalog-wrapper
+    padding: 0 75px 70px
+  .breadcrumb
+    margin: 23px 0 22px
+  .sidebar
+    display: inline-block
+    vertical-align: top
+    padding: 0
+    width: 270px
+    .btn-sidebar
+      text-align: center
+      .icon-filter, .icon-cube
+        float: left
+      .icon-arrow
+        position: relative
+        float: right
+        right: 0
+        top: 0
+        display: inline-block
+        svg
+          vertical-align: middle
+    .dropdown-menu
+      .in
+        .icon-arrow
+          cursor: pointer
+          svg
+            transform: rotate(180deg)
+      .drop-menu2
+        position: relative
+        .icon-arrow
+          position: absolute
+          right: 25px
+          top: 0
+          svg
+            fill: $accent2
+            stroke: $accent2
+            transition: .3s ease
+        .menu-hover-list2
+          display: none
+          li
+            a
+              font-size: 13px
+              color: $accent2
+              display: inherit
+              padding: 0 10px 0 50px
+              position: relative
+              &:before
+                content: ''
+                position: absolute
+                left: 24px
+                top: 13px
+                width: 20px
+                height: 1px
+                background: $accent2
+              &:after
+                content: ''
+                position: absolute
+                left: 38px
+                top: 7px
+                background: url("../img/arrow-accent.png") no-repeat
+                width: 7px
+                height: 13px
+                opacity: 0
+                transition: .3s ease
+              &:hover
+                color: $accent
+                &:after
+                  opacity: 1
+                &:before
+                  background: $accent
+    .filter-menu
+      padding: 0 24px
+      .in
+        .icon
+          svg
+            transform: rotate(180deg)
+      &-title
+        color: $accent2
+        cursor: pointer
+        font-family: 'WhitneySemiBold', sans-serif
+        padding-bottom: 15px
+        .icon
+          float: right
+          svg
+            fill: $accent2
+            stroke: $accent2
+            transition: .3s ease
+      &-content
+        display: none
+        padding-bottom: 24px
+        margin-bottom: 27px
+        border-bottom: 1px solid #eff1f0
+      &:last-child
+        .filter-menu-content
+          margin-bottom: 0
+          border-bottom: none
+          padding-bottom: 0
+  .catalog-content
+    display: inline-block
+    width: calc(100% - 310px)
+    margin-left: 30px
+    .subtitle
+      text-align: left
+      margin: 17px 0 49px
+      &:before
+        left: 0
+        right: auto
+    .sort-wrapper
+      margin-bottom: 30px
+      display: inline-block
+      width: 100%
+      .catalog-content-sort
+        display: inline-block
+        vertical-align: middle
+        p
+          display: inline-block
+          vertical-align: middle
+          color: $accent2
+          font:
+            size: 16px
+            family: 'WhitneyMedium', sans-serif
+          margin-right: 20px
+        ul
+          display: inline-block
+          vertical-align: middle
+          li
+            display: inline-block
+            margin: 0 10px
+            &:first-child
+              margin-left: 0
+            &:last-child
+              margin-right: 0
+            a
+              font-size: 15px
+              color: $bg-grey
+            &:hover
+              color: $accent
+          .active
+            a
+              color: $accent
+              border-bottom: 1px dashed rgba($accent, .5)
+      .sort-right
+        float: right
+        ul
+          li
+            margin: 0
+            a
+              transition: .3s ease
+              &:hover
+                background: $color-accent-gradient
+                color: #FFFFFF
+                border: none
+          .active
+            a
+              color: #FFFFFF
+              border-bottom: none
+      .sort-left
+        line-height: 45px
+        ul
+          li
+            a
+              &:hover
+                color: $accent
+    .cart-product-wrap
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+      flex-wrap: wrap
+      .cart-product
+        margin: 0 0 30px 0
+    .button-group
+      .pagination
+        float: right
+
+.filter-reset
+  padding-bottom: 30px
+  ul
+    display: inline-block
+    margin: 0 20px 0 0
+    li
+      display: inline-block
+      margin: 0 0 10px 0
+      &:last-child
+        margin-right: 0
+      a
+        border: 1px solid #e4e4e4
+          radius: 3px
+        font-size: 14px
+        color: $accent2
+        padding: 5px 10px 5px 25px
+        background: #FFFFFF
+        display: block
+        box-sizing: border-box
+        position: relative
+        .icon-close
+          position: absolute
+          left: 10px
+          svg
+            width: 10px
+            height: 10px
+            fill: $accent2
+        &:hover
+          border-color: $accent
+          .icon
+            svg
+              fill: $accent
+  .btn-accent
+    box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.15)
+    background: $accent
+    padding: 4px 7px
+    font:
+      size: 14px
+      weight: 400
+
+.range_val
+  position: relative
+  margin: 0 0 25px
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    right: 0
+    margin: 0 auto
+    width: 20px
+    height: 1px
+    background: #eff1f0
+    top: 25px
+  input
+    width: 75px
+    height: 40px
+    box-shadow: inset 3px 4px 5px rgba(6, 3, 0, 0.05)
+    border: 1px solid #eff1f0
+    background-color: #fafafa
+    padding: 0
+    text-align: center
+    color: $accent2
+    cursor: pointer
+    font-size: 16px
+    &:hover
+      border-color: $accent
+  .dec2
+    float: right
+.slider-range
+  height: 4px
+  background: #e1e1e1
+  position: relative
+
+.ui-state-default, .ui-slider-handle
+  width: 16px
+  height: 16px
+  box-sizing: border-box
+  background: #FFFFFF
+  border: 4px solid $accent
+    radius: 50%
+  display: inline-block
+  position: absolute
+  outline: none
+  top: -6px
+  cursor: pointer
+  box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.15)
+  
+.ui-widget-header
+  background: $accent !important
+  height: 4px !important
+  left: 0
+  position: absolute
+
+.filter-menu-content
+  label
+    margin-bottom: 15px
+    cursor: pointer
+    display: block
+    &:last-child
+      margin-bottom: 0
+    span
+      padding-left: 30px
+      font-size: 14px
+      line-height: 21px
+      display: block !important
+    input[type="checkbox"]
+      display: none
+      ~ span
+        position: relative
+        display: inline-block
+        color: $accent2
+        text-transform: uppercase
+        &:before
+          content: ""
+          text-align: center
+          font-size: 13px
+          position: absolute
+          display: block
+          width: 20px
+          height: 20px
+          background: #fff
+          border: 1px solid #eff1f0
+            radius: 0
+          left: 0
+          top: 0
+          box-sizing: border-box
+          transition: all 100ms ease-in-out
+          box-shadow: inset 3px 4px 5px rgba(6, 3, 0, 0.05)
+        &:hover
+          &:before
+            border-color: $accent
+      &:checked ~ span:before
+        background: url("../img/check.png") no-repeat $accent center
+        border-color: $accent
+
+/* === page catalog end === */
+
+/* === page product === */
+.page-product
+  .featured-product
+    background: #FFFFFF
+    .subtitle
+      margin-bottom: 40px
+  .not-deals
+    .blog-carousel
+      .owl-nav
+        .owl-prev
+          left: 0
+        .owl-next
+          right: 0
+  .viewed-product
+    padding-bottom: 60px
+    .subtitle
+      margin-bottom: 40px
+  .product-wrapper
+    position: relative
+    padding-bottom: 90px
+    .product-title
+      margin: 43px 0 40px
+      padding-bottom: 34px
+      border-bottom: 1px solid #eff1f0
+      h2
+        display: inline-block
+        color: $accent2
+        font:
+          family: 'WhitneyMedium', sans-serif
+          size: 26px
+      .comparison
+        float: right
+        background: transparent
+        font:
+          family: 'WhitneyMedium', sans-serif
+          size: 14px
+        color: $accent2
+        .icon-comparison
+          svg
+            width: 18px
+            height: 15px
+        &:hover
+          color: $accent
+          svg
+            fill: $accent
+    .product-content
+      display: inline-block
+      .product-slider
+        height: 500px
+        width: 105px
+        display: inline-block
+        overflow: hidden
+        position: relative
+        .swiper-container
+          height: 100%
+          box-sizing: border-box
+          padding: 20px 0
+          .swiper-wrapper
+            box-sizing: border-box
+            width: 100%
+            height: 470px
+            margin: 0 auto
+            .swiper-slide
+              height: 100% !important
+              flex: 1
+              a
+                display: block
+        .swiper-button-next, .swiper-button-prev
+          outline: none
+          cursor: pointer
+          width: 15px
+          height: 8px
+          left: 0
+          right: 0
+          margin: 0 auto
+        .swiper-button-prev
+          top: 0
+          transform: rotate(180deg)
+          background: url("../img/arrow.png") no-repeat center
+        .swiper-button-next
+          bottom: 0
+          top: auto
+          background: url("../img/arrow.png") no-repeat center
+      .product-image
+        display: inline-block
+        width: calc(100% - 125px)
+        float: right
+        position: relative
+        overflow: hidden
+        .icon-search-plus
+          position: absolute
+          top: 20px
+          right: 20px
+          background: rgba(#FFFFFF, .5)
+          width: 30px
+          height: 30px
+          border-radius: 50%
+          text-align: center
+          line-height: 30px
+          img
+            display: inline-block
+            vertical-align: middle
+        a
+          display: block
+      .product-description
+        .top-description
+          padding-bottom: 30px
+          border-bottom: 1px solid #eff1f0
+        .line
+          width: 100%
+          display: inline-block
+          margin-bottom: 30px
+          p
+            display: inline-block
+            font-size: 15px
+            margin-right: 15px
+            vertical-align: middle
+          .advice
+            float: right
+            font-family: 'WhitneyMedium', sans-serif
+            .icon-advice
+              svg
+                fill: $accent2
+                width: 16px
+                height: 18px
+            &:hover
+              color: $accent
+              .icon-advice
+                svg
+                  fill: $accent
+          .price
+            vertical-align: middle
+            color: $accent2
+            font:
+              family: 'WhitneySemiBold', sans-serif
+              size: 34px
+            line-height: normal
+            display: inline-block
+            margin-right: 29px
+          .bookmarks
+            float: right
+            background-color: transparent
+            font-size: 14px
+            font-family: 'WhitneyMedium', sans-serif
+            color: $accent2
+            line-height: 40px
+            .icon
+              border-bottom: none
+              svg
+                fill: $accent2
+            &:hover
+              color: $accent
+              .icon
+                svg
+                  fill: $accent
+          .b-price
+            .select-price
+              width: 140px
+              height: 41px
+              background-position: 110px center
+          .advice
+            line-height: 40px
+            margin-left: 30px
+            color: $accent2
+          .b-quantity
+            float: left
+            display: inline-block
+            vertical-align: middle
+            .quantity
+              display: inline-block
+              vertical-align: middle
+              button
+                height: 40px
+              input
+                height: 40px
+          .btn-accent
+            padding: 9px 12px
+            margin: 0 30px
+          .links
+            padding: 0
+            background: transparent
+        .bottom-description
+          padding: 27px 0 0 0
+          h4
+            font:
+              family: 'WhitneyMedium', sans-serif
+              size: 17px
+            color: $accent2
+            margin-bottom: 20px
+          .bottom-text
+            max-height: 185px
+            overflow-y: scroll
+            ul
+              margin-bottom: 20px
+              li
+                line-height: 30px
+                color: $accent2
+                font-size: 15px
+                span
+                  display: inline-block
+                  color: $bg-grey
+                  min-width: 200px
+                  font-size: 15px
+            p
+              line-height: 20px
+
+
+.arrows-product
+  .arrow
+    z-index: 40
+    position: absolute
+    top: 30%
+    background: #FFFFFF
+    padding: 20px 16px
+    width: 140px
+    height: 220px
+    display: block
+    text-align: center
+    transition: .3s ease
+    &:hover
+      background: $accent2
+      span
+        color: #FFFFFF
+        &:before
+          background: #FFFFFF
+        &:after
+          color: #FFFFFF
+    span
+      text-align: left
+      display: block
+      position: relative
+      font-size: 11px
+      text-transform: uppercase
+      color: $accent2
+      margin-bottom: 15px
+      &:before
+        content: ''
+        position: absolute
+        right: -4px
+        top: 7px
+        background: $accent2
+        width: 20px
+        height: 1px
+      &:after
+        content: '<'
+        position: absolute
+        right: 11px
+        top: -2px
+        color: $accent2
+    img
+      max-width: 100px
+      margin: 0 auto
+      display: inline-block
+  .arrow-next
+    right: 0
+    span
+      text-align: right
+      &:before
+        left: -4px
+        right: auto
+      &:after
+        left: 11px
+        right: auto
+        transform: rotate(180deg)
+
+.loupe
+  border: 1px solid $accent2
+    radius: 50%
+  cursor: pointer
+  z-index: 50
+
+/* === page product end === */
+
+
+@import "media"
+// Всегда в конце

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="6"
+     viewBox="0 0 10 6">
+    <defs>
+        <path id="xmmra" d="M101 74.33L96 79l-5-4.67"/>
+        <clipPath id="xmmrb">
+            <use xlink:href="#xmmra"/>
+        </clipPath>
+    </defs>
+    <g>
+        <g transform="translate(-91 -74)">
+            <use fill-opacity="0" stroke-miterlimit="50" stroke-width="2"
+                 clip-path="url(&quot;#xmmrb&quot;)" xlink:href="#xmmra"/>
+        </g>
+    </g>
+</svg>

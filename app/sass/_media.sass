@@ -1,0 +1,1061 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+@media screen and (max-width: 1950px)
+  #advantages
+    .adv-item-right
+      max-width: 320px
+
+@media screen and (max-width: 1650px)
+  #advantages
+    .adv-item
+      padding: 48px 14px 50px
+      &-left
+        padding-right: 80px
+        &:before
+          width: 50px
+
+  .btn-top
+    right: 40px
+    bottom: 40px
+
+@media only screen and (max-width : 1600px)
+  #slider
+    height: auto
+    .carousel_item
+      .container
+        .slides-text
+          margin-left: 100px
+          .sale
+            margin: 30px 0
+  .carousel-wrapper
+    #hash-navigation
+      width: 230px
+      ul
+        margin: 20px 0
+        li
+          a
+            padding: 10px 15px 10px 50px
+            font-size: 14px
+            &:before
+              width: 25px
+              left: 15px
+            &:focus
+              &:after
+                left: 35px
+
+  .page-about
+    .s-about-top
+      .s-about-top-image
+        right: -350px
+
+@media screen and (max-width: 1490px)
+  .page-about
+    .s-about-bottom
+      .s-about-text
+        padding: 30px 15px 30px 30px
+      .s-about-img
+        max-height: none
+        img
+          width: auto
+          height: 100%
+          max-width: none
+          margin: 0 auto
+
+  .arrows-product
+    .arrow
+      width: 90px
+      height: 150px
+      span
+        font-size: 9px
+        margin-bottom: 7px
+        &:before
+          top: -3px
+        &:after
+          top: -13px
+      img
+        max-width: 60px
+
+  .page-product .product-wrapper .product-content .product-description .bottom-description .bottom-text
+    max-height: 185px
+
+@media only screen and (max-width : 1350px)
+  .page-product
+    .product-wrapper
+      .product-content
+        width: calc(100% - 120px)
+        margin: 0 auto
+        display: block
+
+  #slider
+    .carousel_item
+      .container
+        height: auto
+        min-height: 500px
+        .slides-text
+          margin-left: 200px
+          h4
+            font-size: 60px
+          p
+            font-size: 16px
+            text-align: left
+          .sale
+            &:before
+              height: 78px
+              right: 20px
+              -webkit-background-size: contain
+              background-size: contain
+            li
+              font-size: 16px
+              p
+                font-size: 50px
+                line-height: normal
+          span
+            font-size: 11px
+
+  .page-about
+    .s-about-top
+      .s-about-top-image
+        right: -400px
+
+  .page-reviews-bottom
+    margin: 0 auto
+
+  .page-catalog
+    .catalog-wrapper
+      padding: 0 15px 70px
+
+  .page-product
+    .not-deals
+      .blog-carousel
+        .owl-nav
+          .owl-prev
+            left: 45px
+          .owl-next
+            right: 45px
+
+
+
+@media only screen and (max-width : 1199px)
+  .arrows-product
+    display: none
+
+  .page-product
+    .product-wrapper
+      .product-content
+        width: 100%
+        display: inline-block
+        .slider-wrapper
+          display: flex
+          flex-direction: column
+        .product-image
+          width: 100%
+          order: -2
+          a
+            img
+              width: 100%
+        .product-slider
+          margin: 10px auto 0
+          height: 80px
+          width: 100%
+          .swiper-container
+            padding: 0
+            .swiper-wrapper
+              height: 80px
+              .swiper-slide
+                height: 100% !important
+                flex: none
+                a
+                  margin: 0 auto
+                  height: 100%
+                  width: 100%
+                  img
+                    height: 100%
+                    width: auto
+                    margin: 0 auto
+            .swiper-button-prev
+              left: auto
+              top: 40%
+              right: auto
+              transform: rotate(90deg)
+            .swiper-button-next
+              right: 0
+              left: auto
+              top: 40%
+              transform: rotate(-90deg)
+        .product-description
+          .line
+            .btn-accent
+              margin: 0 20px
+          .bottom-description
+            .bottom-text
+              max-height: 330px
+              ul
+                li
+                  span
+                    min-width: auto
+
+  .page-about .s-about-top .s-about-top-image
+    right: -600px
+  .social a
+    margin-right: 5px
+  .not-deals
+    padding: 0
+    .filter-wrapper
+      .blog-carousel
+        .owl-nav
+          .owl-prev
+            left: 8px
+          .owl-next
+            right: 8px
+
+  #slider
+    &:before
+      width: 150px
+      height: 130px
+      -webkit-background-size: contain
+      background-size: contain
+    .carousel_item
+      .container
+        min-height: auto
+        .slides-text
+          margin: 38px 0 38px 200px
+  .carousel-wrapper
+    #hash-navigation
+      width: 200px
+      ul
+        margin: 10px 0
+        li
+          a
+            font-size: 11px
+            line-height: normal
+
+  .navbar-nav
+    li
+      a
+        font-size: 10px
+        padding: 38px 7px
+
+  #header-line
+    .header-line-wrapper
+      #phone
+        padding-bottom: 20px
+        a
+          font-size: 14px
+          padding-left: 0
+          span
+            display: inline-block
+          &:last-child
+            padding-left: 20px
+      .btn-callback
+        font-size: 12px
+      .no-padding, .block-callback
+        float: right
+
+  .block-mobile
+    display: block
+    .mobile_mnu
+      display: block
+      padding: 13px 21px 10px
+      border-right: 1px solid rgb(228, 228, 228)
+      svg
+        display: inline-block
+        vertical-align: middle
+
+  .search
+    width: 0
+
+
+  #menu
+    display: block
+
+  #collage
+    .product-layout
+      .product-thumbs, .thumbs-max, .thumbs-min
+        .image
+          height: 100%
+          min-height: 230px
+          img
+            width: 100%
+            height: 100%
+
+  #advantages
+    .adv-item
+      &:after
+        top: 20px
+      &-right
+        max-width: 100%
+        margin: 20px 0 0 0
+
+  .blog-max-items
+    margin-bottom: 30px
+    .image
+      height: auto
+
+  .page-about
+    .s-about-bottom
+      .s-about-text
+        .btn
+          margin: 10px auto 0
+          display: block
+          max-width: 370px
+
+  .page-contacts
+    .contacts-form
+      width: 100%
+      padding: 20px 30px 32px
+      .input-group
+        input
+          width: 60%
+          font-size: 12px
+          padding: 0 0 0 15px
+        .input-text
+          width: 100px
+
+  .page-representative
+    .representative-item
+      .item-maps
+        height: 244px
+      .item-image
+        height: 244px
+        img
+          height: 100%
+          width: auto
+          max-height: none
+
+  .page-catalog
+    .catalog-wrapper
+      .container-fluid
+        max-width: 970px
+    .sidebar
+      width: 100%
+      padding: 0 15px
+    .catalog-content
+      width: 100%
+      margin: 0
+      padding: 0 15px
+      .subtitle
+        margin-top: 36px
+        text-align: center
+        &:before
+          right: 0
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 991px)
+  .page-product
+    .product-wrapper
+      .product-content
+        .product-slider
+          margin: 10px auto 26px
+        .product-description
+          .line
+            margin-bottom: 20px
+            .b-quantity
+              margin-right: 20px
+            .advice
+              margin-left: 0
+            .btn-accent
+              width: 100%
+              margin: 20px auto
+            .button-group-bottom
+              text-align: center
+              .bookmarks
+                padding: 0
+              .comparison
+                background: transparent
+                padding: 0
+                .icon-comparison
+                  svg
+                    width: 18px
+                    height: 15px
+          .links
+            background: transparent
+            display: block
+            margin: 0 auto
+          .bottom-description
+            .bottom-text
+              max-height: 220px
+
+  .page-catalog
+    .sidebar
+      margin-bottom: 0
+    .catalog-wrapper
+      .container-fluid
+        max-width: 750px
+        .catalog-content
+          .sort-wrapper
+            .catalog-content-sort
+              display: block
+            .sort-right
+              float: left
+              width: 100%
+              display: block
+            .sort-left
+              line-height: normal
+              margin-bottom: 10px
+          .cart-product-wrap
+            justify-content: space-around
+
+  .page-representative
+    .representative-item
+      .item-maps
+        height: 260px
+      .item-image
+        height: auto
+        width: 100%
+        img
+          width: 100%
+          height: auto
+  .search .input-group-btn .btn
+    width: 100%
+  .page-about
+    .s-about-top
+      padding-bottom: 0
+      .s-about-top-image
+        right: 0
+        bottom: 0
+        position: relative
+        img
+          width: 100%
+          height: auto
+  .sidebar-menu
+    .btn-sidebar
+      text-align: center
+      font-size: 16px
+      padding: 10px 25px
+      .icon-doc
+        float: left
+        margin-right: 0
+      .icon-arrow
+        top: 7px
+  h1.subtitle
+    font-size: 15px
+    margin: 26px auto 30px
+    padding-bottom: 28px
+
+  .sidebar
+    margin-bottom: 39px
+  .score-menu
+    margin-bottom: 40px
+  #slider
+    .carousel_item
+      .container
+        .slides-text
+          margin-left: 0
+          .sale
+            li
+              p
+                font-size: 46px
+    .owl-nav
+      .owl-prev
+        left: 8px
+      .owl-next
+        right: 8px
+  .carousel-wrapper
+    #hash-navigation
+      height: auto
+      width: auto
+      background: transparent
+      ul
+        li
+          a
+            padding: 10px 40px
+            &:before
+              height: 1px
+              top: 9px
+              left: 20px
+              background: #FFFFFF
+            &:focus
+              background: transparent
+              &:before
+                background: $accent2
+              &:after
+                top: 3px
+                left: 40px
+            span
+              display: none
+
+  #header-line
+    .header-line-wrapper
+      .logo
+        padding: 10px 0
+      .mobile-list
+        display: inline-block
+        float: right
+        padding: 15px 15px 0 0
+
+  .block-mobile
+    .mobile_mnu
+      padding: 10px 15px 10px 0
+
+
+  #top-links
+    .mobile-list
+      display: inline-block
+      li
+        padding: 9px 15px
+        &:nth-child(1)
+          padding: 9px 15px
+        &:last-child
+          .icon
+            svg
+              vertical-align: bottom
+          .search
+            .input-group-btn
+              button
+                .icon
+                  svg
+                    vertical-align: middle
+        &:hover
+          .icon
+            svg
+              fill: $accent
+      .entrance
+        padding: 9px 15px
+        border-right: 1px solid rgb(228, 228, 228)
+
+
+  #advantages
+    .adv-item
+      .image
+        left: 0
+        right: 0
+        margin: 0 auto
+      &:after
+        width: 90%
+        height: 0
+        left: 0
+        right: 0
+        margin: 0 auto
+        box-shadow: 0 5px 20px 5px rgba(136, 136, 136, 0.11)
+      &-right
+        max-width: 80%
+        margin: 0 0 0 20px
+
+  .main-footer
+    .main-footer-top
+      padding: 25px 0
+      h3
+        font-size: 14px
+        margin-bottom: 15px
+        padding-left: 20px
+      .footer-logo
+        padding: 0 15px
+        .logo
+          a
+            display: block
+            max-width: 100px
+            margin: 0 auto
+        .social
+          width: 100%
+          display: inline-block
+          vertical-align: middle
+          margin: 20px 0 0 0
+          text-align: center
+          a
+            margin: 0 10px 0 0
+
+  .btn-top
+    width: 48px
+    height: 50px
+    line-height: 40px
+
+  .page-reviews
+    h3
+      text-align: center
+      margin-bottom: 24px
+      font-size: 18px
+    &-form
+      margin-bottom: 42px
+      .contacts-form
+        textarea
+          height: 130px
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 769px)
+  .page-product
+    .viewed-product
+      padding-bottom: 0
+    .product-wrapper
+      padding-bottom: 46px
+      .product-title
+        margin: 36px 0 20px
+        padding-bottom: 15px
+        h2
+          font-size: 20px
+      .product-content
+        .product-description
+          .bottom-description
+            .bottom-text
+              ul
+                li
+                  font-size: 14px
+                  span
+                    min-width: auto
+          .top-description
+            .line
+              .price
+                font-size: 30px
+                margin-right: 0
+              .b-price
+                .select-price
+                  width: 200px
+                  background-position: 170px center
+              .button-group-bottom
+                .comparison
+                  float: left
+                .bookmarks
+                  float: right
+                  line-height: normal
+
+  .page-catalog
+    .catalog-wrapper
+      .container-fluid
+        .catalog-content
+          .sort-wrapper
+            .sort-right
+              display: none
+            .catalog-content-sort
+              p
+                display: none
+              ul
+                width: 100%
+                text-align: center
+                li
+                  margin: 0 7px
+                  &:first-child
+                    margin-left: 0
+                  &:last-child
+                    margin-right: 0
+                  a
+                    font-size: 13px
+    .catalog-content
+      .subtitle
+        margin: 36px 0
+      .button-group
+        text-align: center
+        .pagination
+          float: none
+
+  .page-representative
+    .b-bottom
+      .btn-default
+        padding: 10px 0
+        width: 100%
+        margin: 20px auto 39px
+    .representative-item
+      .item-contacts
+        .line
+          padding-left: 43px
+          .icon
+            left: 20px
+    .bonus-program
+      padding: 37px 0
+
+  .bonus-program, .cooperation
+    .block-title
+      font-size: 18px
+      margin-bottom: 27px
+
+  .page-contacts
+    .contacts-item
+      h3
+        font-size: 18px
+        margin-bottom: 30px
+      .line
+        margin-bottom: 22px
+        position: relative
+        &:before
+          content: ''
+          position: absolute
+          left: 0
+          top: 8px
+        &:nth-child(3), &:nth-child(2)
+          padding-left: 25px
+          p
+            display: none
+        &:nth-child(2)
+          &:before
+            background: url("../img/phone-call-button.svg") no-repeat
+              size: contain
+            width: 15px
+            height: 15px
+        &:nth-child(3)
+          &:before
+            background: url("../img/email.svg") no-repeat
+              size: contain
+            width: 18px
+            height: 13px
+
+  #map
+    margin: 58px auto 26px
+
+
+  .page-about
+    .s-about
+      h3
+        font-size: 16px
+      &-bottom
+        .container-fluid
+          max-width: 750px
+        .s-about-text
+          padding: 30px 15px
+        .s-about-img
+          padding: 0 15px
+          img
+            width: 100%
+            height: auto
+  #latest-blog
+    padding-bottom: 40px
+  .main-footer
+    .main-footer-top
+      .footer-logo
+        margin-top: 20px
+        .logo
+          width: 72px
+          display: inline-block
+          vertical-align: middle
+          a
+            img
+              margin-left: 0
+        .social
+          width: auto
+          display: inline-block
+          vertical-align: middle
+          margin: 10px 0 0 20px
+          a
+            margin: 0 10px 0 0
+  .icon-user
+    height: 15px
+  #header-line
+    .header-line-wrapper
+      .logo
+        width: 50px
+      .mobile-list
+        padding: 25px 15px 0 0
+  #slider
+    &:before
+      top: 16px
+      left: 0
+      right: 0
+      margin: 0 auto
+      width: 278px
+      height: 233px
+    .carousel_item
+      .container
+        height: 470px
+        a
+          .slides-text
+            margin: 32px auto 0
+            float: none
+            width: 230px
+          .image
+            width: 300px
+            height: auto
+            img
+              width: 100%
+              height: auto
+  #menu
+    form
+      display: inline-block
+    ul
+      li
+        display: block
+
+  .controls a
+    margin: 0 15px
+    font-size: 20px
+
+  .blog-min-items
+    .image
+      width: 100%
+      height: auto
+      img
+        height: 200px
+        width: auto
+        margin: 0 auto
+    .block-text
+      padding: 15px 20px
+
+  .blog-items
+    .block-text
+      padding: 21px 20px
+    .block-date
+      &:before
+        top: 3px
+      p
+        margin: 0
+
+  .latest-blog-wrapper
+    .owl-nav
+      .owl-next
+        right: 8px
+        top: 205px
+      .owl-prev
+        left: 8px
+        top: 205px
+
+  #seo-text
+    .block-text
+      margin: 29px auto
+      padding-right: 11px
+      h6
+        font-size: 16px
+        line-height: 20px
+        margin-bottom: 23px
+      p
+        margin-bottom: 22px
+
+  .controls.owl-carousel
+    .owl-nav
+      .owl-prev, .owl-next
+        width: auto
+        height: auto
+        background: transparent
+        img
+          box-shadow: none
+          opacity: 1
+      .owl-prev
+        left: 20px
+        transform: rotate(360deg)
+        top: 5px
+      .owl-next
+        right: 20px
+        transform: rotate(180deg)
+        top: 0
+
+  .collage-carousel.owl-carousel
+    .owl-nav
+      .owl-prev
+        left: 8px
+        top: 40%
+        right: auto
+      .owl-next
+        right: 8px
+        left: auto
+        top: 40%
+
+  .page-blog, .page-article, #accordion
+    margin-bottom: 40px
+    .button-group
+      margin: 0 auto
+      .pagination
+        float: none
+        margin: 0 auto
+  .page-blog
+    .button-group
+      text-align: center
+      .btn-loading
+        display: none
+
+  .pager
+    .pager-prev, .pager-next
+      display: block
+      float: none
+      a
+        width: 100%
+    .pager-prev
+      margin-bottom: 10px
+
+  #advantages
+    .adv-item
+      padding: 38px 14px 40px
+      &-text
+        height: auto !important
+      &-left
+        display: none
+      &-right
+        max-width: 100%
+        width: 100%
+        margin: 0 auto
+        padding-left: 20px
+        box-sizing: border-box
+        .btn
+          width: 100%
+        h3
+          font-size: 26px
+
+  .page-about
+    .s-about-bottom
+      .s-about-text
+        .btn
+          max-width: 100%
+          padding: 10px 0
+          font-size: 14px
+
+  .cooperation
+    .container
+      .delivery-item
+        h3
+          width: calc(100% - 60px)
+
+  .page-reviews-bottom
+    padding: 36px 0 60px
+    .reviews-item
+      padding: 22px 20px
+      .block-name
+        font-size: 16px
+      .date-wrap
+        margin-bottom: 22px
+        .block-date
+          float: left
+      .response-admin
+        padding: 23px 0 0 0
+        .block-name
+          padding-left: 30px
+          &:before
+            width: 20px
+            left: 0
+          &:after
+            left: 15px
+    .pagination-wrap
+      text-align: center
+
+@media screen and (max-width: 767px)
+  .page-product .product-wrapper .product-content .product-description .line .links
+    display: inline-block
+  .page-contacts
+    &-wrapper
+      margin-bottom: 40px
+      .it-wrap
+        &:nth-child(1)
+          .contacts-item
+            border-bottom: 1px solid #e6e6e6
+            padding-bottom: 29px
+            margin-bottom: 27px
+            .b-text
+              max-height: none
+              overflow: auto
+        .contacts-item
+          .b-text
+            max-height: 254px
+    .contacts-form
+      padding: 34px 0 0 0
+      border:
+        left: none
+        right: none
+        bottom: none
+      .input-group
+        input
+          padding: 0 21px
+          width: calc(100% - 135px)
+        .input-text
+          width: 125px
+
+@media screen and (max-width: 700px)
+  .main-footer
+    .main-footer-bottom
+      p, a
+        width: 100%
+        text-align: center
+        font-size: 13px
+        line-height: normal
+      p
+        margin-bottom: 5px
+
+@media screen and (max-width: 590px)
+  .page-catalog
+    .catalog-content
+      .cart-product-wrap
+        flex-direction: column
+        align-items: center
+
+@media screen and (max-width: 555px)
+  .blog-items .block-text p
+    font-size: 12px
+
+  .block-date::before
+    top: 7px
+
+  .links
+    font-size: 14px
+
+  .blog-min-items .image img
+    height: 120px
+
+  .top
+    width: 38px
+    height: 40px
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+  .bonus-program
+    .order-item-title
+      h3
+        width: calc(100% - 60px)
+  .subtitle
+    font-size: 15px
+    line-height: 20px
+    padding-bottom: 26px
+    margin: 39px auto 30px
+
+  .collage-carousel.owl-carousel
+    .owl-nav
+      .owl-prev
+        top: 30%
+      .owl-next
+        top: 30%
+
+  #collage
+    .product-layout
+      .product-thumbs, .thumbs-max, .thumbs-min
+        .image
+          max-height: 180px
+          img
+            height: 100%
+            max-width: none
+            width: 100%
+        .product-thumbs-menu
+          padding-bottom: 0
+          li
+            .links-title
+              font-size: 15px
+              width: 100%
+
+
+@media screen and (max-width: 400px)
+  #slider
+    .carousel_item
+      .container
+        a
+          .image
+            right: -50px
+
+  .btn-top
+    display: none
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 340px)
+	.main-footer
+      .main-footer-top
+        .footer-menu
+          padding-right: 0
+
+
+/*==========  Mobile First  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	/**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/**/
+
